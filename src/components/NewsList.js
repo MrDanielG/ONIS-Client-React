@@ -51,7 +51,7 @@ const NewsList = () => {
                 <Grid.Container gap={2} justify="flex-start">
                     {news?.articles?.map((newsItem, i) => (
                         <Grid xs={12} sm={6} md={4} lg={3} key={i}>
-                            <NewsItem newsItem={newsItem} />
+                            <NewsItem newsItem={newsItem} keyword={keyword} />
                         </Grid>
                     ))}
                 </Grid.Container>

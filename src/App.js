@@ -1,23 +1,14 @@
-import { Spacer, Text } from '@nextui-org/react';
-import NewsList from './components/NewsList';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import NewsDetailPage from './pages/NewsDetailPage';
 
 function App() {
     return (
         <div>
-            <Spacer y={2} />
-            <Text
-                h1
-                size={60}
-                css={{
-                    textGradient: '45deg, $blue600 -20%, $pink600 50%',
-                    textAlign: 'center',
-                }}
-                weight="bold"
-            >
-                News API - React Client
-            </Text>
-
-            <NewsList />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/news/:title" element={<NewsDetailPage />} />
+            </Routes>
         </div>
     );
 }
