@@ -1,8 +1,8 @@
-import { Button, Card, Col, Row, Text } from '@nextui-org/react';
+import { Card, Col, Row, Text } from '@nextui-org/react';
 
-const NewsItem = () => {
+const NewsItem = ({ newsItem }) => {
     return (
-        <Card css={{ w: '100%', maxHeight: '350px' }} isHoverable isPressable>
+        <Card css={{ w: '100%', h: '300px' }} isHoverable isPressable>
             <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
                 <Col>
                     <Text
@@ -11,20 +11,29 @@ const NewsItem = () => {
                         transform="uppercase"
                         color="#ffffffAA"
                     >
-                        New
+                        {new Date(newsItem.publishedAt).toLocaleDateString()}
                     </Text>
-                    <Text h3 color="black">
-                        Acme camera
+                    <Text
+                        h4
+                        color="white"
+                        css={{
+                            textShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
+                        }}
+                    >
+                        {newsItem.title}
                     </Text>
                 </Col>
             </Card.Header>
             <Card.Body css={{ p: 0 }}>
                 <Card.Image
-                    src="https://nextui.org/images/card-example-6.jpeg"
+                    src={newsItem.urlToImage}
                     width="100%"
                     height="100%"
                     objectFit="cover"
-                    alt="Card example background"
+                    alt="News Img"
+                    css={{
+                        backgroundColor: '#000000AA',
+                    }}
                 />
             </Card.Body>
             <Card.Footer
@@ -41,25 +50,8 @@ const NewsItem = () => {
                 <Row>
                     <Col>
                         <Text color="#000" size={12}>
-                            Available soon.
+                            {newsItem.author ?? 'Unknown Author'}
                         </Text>
-                        <Text color="#000" size={12}>
-                            Get notified.
-                        </Text>
-                    </Col>
-                    <Col>
-                        <Row justify="flex-end">
-                            <Button flat auto rounded color="secondary">
-                                <Text
-                                    css={{ color: 'inherit' }}
-                                    size={12}
-                                    weight="bold"
-                                    transform="uppercase"
-                                >
-                                    Notify Me
-                                </Text>
-                            </Button>
-                        </Row>
                     </Col>
                 </Row>
             </Card.Footer>
