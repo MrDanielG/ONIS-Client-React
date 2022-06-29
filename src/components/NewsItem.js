@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 const NewsItem = ({ newsItem, keyword }) => {
     return (
         <Link to={`/news/${newsItem?.title}?q=${keyword}`}>
-            <Card css={{ w: '100%', h: '300px' }} isHoverable isPressable>
+            <Card
+                css={{ w: '100%', h: '300px', minWidth: '310px' }}
+                isHoverable
+                isPressable
+            >
                 <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
                     <Col>
                         <Text
