@@ -2,7 +2,7 @@ import { Button, Card, Col, Row, Text } from '@nextui-org/react';
 
 const NewsItem = () => {
     return (
-        <Card css={{ w: '100%', maxHeight: '400px' }} isHoverable isPressable>
+        <Card css={{ w: '100%', maxHeight: '350px' }} isHoverable isPressable>
             <Card.Header css={{ position: 'absolute', zIndex: 1, top: 5 }}>
                 <Col>
                     <Text

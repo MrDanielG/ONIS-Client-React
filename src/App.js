@@ -1,9 +1,10 @@
-import { Text } from '@nextui-org/react';
+import { Spacer, Text } from '@nextui-org/react';
 import NewsList from './components/NewsList';
 
 function App() {
     return (
-        <div className="mt-8">
+        <div>
+            <Spacer y={2} />
             <Text
                 h1
                 size={60}
@@ -13,7 +14,7 @@ function App() {
                 }}
                 weight="bold"
             >
-                News API - Client
+                News API - React Client
             </Text>
 
             <NewsList />
