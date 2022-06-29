@@ -1,9 +1,9 @@
-import { Button, Input, Text } from '@nextui-org/react';
-import { HiSearch } from 'react-icons/hi';
+import { Text } from '@nextui-org/react';
+import NewsList from './components/NewsList';
 
 function App() {
     return (
-        <div className="bg-slate-50 h-screen flex justify-center flex-col items-center container">
+        <div className="mt-8">
             <Text
                 h1
                 size={60}
@@ -16,15 +16,7 @@ function App() {
                 News API - Client
             </Text>
 
-            <div className="m-8 flex gap-2">
-                <Input clearable bordered labelPlaceholder="Search" />
-                <Button
-                    auto
-                    color="primary"
-                    className="bg-blue-500  text-white "
-                    icon={<HiSearch className="text-xl" />}
-                />
-            </div>
+            <NewsList />
         </div>
     );
 }
